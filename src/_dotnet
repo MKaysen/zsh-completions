@@ -1,8 +1,9 @@
-#compdef _dotnet dotnet
+#compdef dotnet
 
-_dotnet()
-{
+_dotnet() {
   local completions=("$(dotnet complete "$words")")
 
   reply=( "${(ps:\n:)completions}" )
 }
+
+_yarn "$@"

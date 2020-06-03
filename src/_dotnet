@@ -1,0 +1,8 @@
+#compdef _dotnet dotnet
+
+_dotnet()
+{
+  local completions=("$(dotnet complete "$words")")
+
+  reply=( "${(ps:\n:)completions}" )
+}

@@ -1,0 +1,28 @@
+#compdef dotnet
+# -*- mode: sh; sh-indentation: 4; indent-tabs-mode: nil; sh-basic-offset: 4; -*-
+
+# Copyright (c) 2020 Mikkel Kaysen
+
+# Completion for dotnet, wrapping dotnet complete function from cli
+
+_dotnet() {
+    local values
+
+    values=(
+        "$(dotnet complete "${words}")"
+    )
+
+    if [[ -z "${values}" ]]; then
+    	_arguments '*::arguments: _normal'
+	return
+    fi
+
+    _values = "${(f)values}"
+}
+
+_dotnet "$@"
+
+# Use alternate marks [[[ and ]]] as the original ones can confuse nested
+# substitutions, e.g.: ${${${VAR}}}
+
+# vim:ft=zsh:tw=80:sw=4:sts=4:et:foldmarker=[[[,]]]

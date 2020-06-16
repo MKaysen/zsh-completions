@@ -14,10 +14,6 @@ if [[ ${zsh_loaded_plugins[-1]} != */completions && -z ${fpath[(r)${0:h}/functio
     fpath+=( "${0:h}/functions" )
 }
 
-# Standard hash for plugins, to not pollute the namespace
-typeset -gA Plugins
-Plugins[COMPLETIONS_DIR]="${0:h}"
-
 # Use alternate vim marks [[[ and ]]] as the original ones can
 # confuse nested substitutions, e.g.: ${${${VAR}}}
 

@@ -3,3 +3,4 @@
 ## List of provided completions
 
 * dotnet
+* git-flow (AVH Edition)

@@ -20,7 +20,7 @@ _dotnet() {
     _values = "${(f)values}"
 }
 
-_dotnet "$@"
+_dotnet
 
 # Use alternate marks [[[ and ]]] as the original ones can confuse nested
 # substitutions, e.g.: ${${${VAR}}}

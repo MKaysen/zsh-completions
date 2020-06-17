@@ -1,5 +1,3 @@
-# -*- mode: sh; sh-indentation: 4; indent-tabs-mode: nil; sh-basic-offset: 4; -*-
-
 # Copyright (c) 2020 Mikkel Kaysen
 
 # According to the Zsh Plugin Standard:
@@ -11,10 +9,6 @@
 # Then ${0:h} to get plugin's directory
 
 if [[ ${zsh_loaded_plugins[-1]} != */completions && -z ${fpath[(r)${0:h}/functions]} ]] {
-    fpath+=( "${0:h}/functions" )
+  fpath+=( "${0:h}/functions" )
 }
 
-# Use alternate vim marks [[[ and ]]] as the original ones can
-# confuse nested substitutions, e.g.: ${${${VAR}}}
-
-# vim:ft=zsh:tw=80:sw=4:sts=4:et:foldmarker=[[[,]]]

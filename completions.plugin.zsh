@@ -10,9 +10,8 @@
 
 if [[ ${zsh_loaded_plugins[-1]} != */completions && -z ${fpath[(r)${0:h}/functions]} ]] {
   fpath+=( "${0:h}/functions" )
-
-  if [[ ${+commands[brew]} ]] {
-    fpath+=( "$(brew --prefix)/share/zsh/site-functions" )
-  }
 }
 
+if [[ ${+commands[brew]} && -z ${fpath[(r)$(brew --prefix)/share/zsh/site-functions]} ]] {
+  fpath+=( "$(brew --prefix)/share/zsh/site-functions" )
+}
